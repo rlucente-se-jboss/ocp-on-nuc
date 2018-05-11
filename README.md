@@ -8,8 +8,8 @@ with the following configuration:
 <p align="center">
 <img src="my-intel-nuc.png" alt="My Little NUC">
 </p>
-<p align="center">
-<table>
+
+<table align="center">
 <caption>My Little NUC</caption>
 <tr><th>Feature</th><th>Description</th></tr>
 <tr><td>CPU</td><td>Intel 2.6 GHz 4-Core i7 6700HQ</td></tr>
@@ -17,7 +17,6 @@ with the following configuration:
 <tr><td>Graphics</td><td>Intel Iris Pro Graphics 580</td></tr>
 <tr><td>SSD</td><td>Samsung 850 EVO - 500GB</td></tr>
 </table>
-</p>
 
 ## Install RHEL
 Install RHEL 7.5 using the minimal package set.  Create the following

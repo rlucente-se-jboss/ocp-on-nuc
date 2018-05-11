@@ -6,14 +6,17 @@ hardware is an Intel NUC mini PC kit NUC6i7KYK (e.g. Skull Canyon)
 with the following configuration:
 
 <p align="center">
-![My Little NUC](my-intel-nuc.png?raw=true "My Little NUC")
-
-| Feature | Description |
-| :-----: | ------- |
-| CPU | Intel 2.6 GHz 4-Core i7 6700HQ |
-| Memory | Crucial 32GB DDR4 2133 |
-| Graphics | Intel Iris Pro Graphics 580 |
-| SSD | Samsung 850 EVO - 500GB |
+<img src="my-intel-nuc.png" alt="My Little NUC">
+</p>
+<p align="center">
+<table>
+<caption>My Little NUC</caption>
+<tr><th>Feature</th><th>Description</th></tr>
+<tr><td>CPU</td><td>Intel 2.6 GHz 4-Core i7 6700HQ</td></tr>
+<tr><td>Memory</td><td>Crucial 32GB DDR4 2133</td></tr>
+<tr><td>Graphics</td><td>Intel Iris Pro Graphics 580</td></tr>
+<tr><td>SSD</td><td>Samsung 850 EVO - 500GB</td></tr>
+</table>
 </p>
 
 ## Install RHEL

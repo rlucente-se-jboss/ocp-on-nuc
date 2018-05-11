@@ -4,7 +4,7 @@ OpenShift Origin instructions](https://github.com/gshipley/installcentos),
 to run OpenShift Container Platform on an Intel NUC.  The specific
 hardware is an Intel NUC mini PC kit NUC6i7KYK (e.g. Skull Canyon)
 with the following configuration:
-
+<center>
 ![My Little NUC](my-intel-nuc.png?raw=true "My Little NUC")
 
 | Feature | Description |
@@ -13,6 +13,7 @@ with the following configuration:
 | Memory | Crucial 32GB DDR4 2133 |
 | Graphics | Intel Iris Pro Graphics 580 |
 | SSD | Samsung 850 EVO - 500GB |
+</center>
 
 ## Install RHEL
 Install RHEL 7.5 using the minimal package set.  Create the following

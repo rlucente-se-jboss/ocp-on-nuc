@@ -15,16 +15,16 @@ with the following configuration:
 ![My Little NUC](my-intel-nuc.png?raw=true "My Little NUC")
 
 ## Install RHEL
-Install RHEL 7.5 using the minimal DVD image.  Create the following
+Install RHEL 7.5 using the minimal package set.  Create the following
 mount points on the disk:
 
 * /boot with 2 GiB
 * / with 394 GiB
 * swap with 4 GiB
 
-This leaves about 100 GiB for the docker-vg volume group.  Make
-sure to set the root password and also create an unprivileged user
-(with sudo privileges).
+This leaves about 100 GiB for the docker-vg volume group which will
+be created later.  Make sure to set the root password and also
+create an unprivileged user (with sudo privileges).
 
 ## Prepare the Server
 Run the following script as root to prepare the server for installs.
@@ -42,14 +42,14 @@ admin user as well as an unprivileged user.
 
     ./install-server.sh
 
-The following users are created:
+The following username/passwords are created:
 
 * admin/admin
 * developer/developer
 
 ## Create Persistent Volumes
 Run the following script as root to create one hundred 10 GiB
-persistent volumes.
+persistent volumes.  The directories are under `/mnt/data`.
 
     ./create-pvs.sh
 

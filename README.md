@@ -1,5 +1,14 @@
 # ocp-on-nuc
-Install OpenShift Container Platform on an Intel NUC
+Use these instructions to run OpenShift Container Platform on an
+Intel NUC.  The specific hardware is an Intel NUC mini PC kit
+NUC6i7KYK (e.g. Skull Canyon) with the following configuration:
+
+| CPU | Intel 2.6 GHz 4-Core i7 6700HQ |
+| Memory | Crucial 32GB DDR4 2133 |
+| Graphics | Intel Iris Pro Graphics 580 |
+| SSD | Samsung 850 EVO - 500GB |
+
+![My Little NUC](my-intel-nuc.png?raw=true "My Little NUC")
 
 ## Install RHEL
 Install RHEL 7.5 using the minimal DVD image.  Create the following

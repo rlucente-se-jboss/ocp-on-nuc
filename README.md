@@ -10,7 +10,6 @@ with the following configuration:
 </p>
 
 <table align="center">
-<caption>My Little NUC</caption>
 <tr><th>Feature</th><th>Description</th></tr>
 <tr><td>CPU</td><td>Intel 2.6 GHz 4-Core i7 6700HQ</td></tr>
 <tr><td>Memory</td><td>Crucial 32GB DDR4 2133</td></tr>

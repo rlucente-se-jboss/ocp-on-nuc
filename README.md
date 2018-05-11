@@ -1,7 +1,9 @@
 # ocp-on-nuc
-Use these instructions to run OpenShift Container Platform on an
-Intel NUC.  The specific hardware is an Intel NUC mini PC kit
-NUC6i7KYK (e.g. Skull Canyon) with the following configuration:
+Use these instructions, adapted from [Grant Shipley's excellent
+OpenShift Origin instructions](https://github.com/gshipley/installcentos),
+to run OpenShift Container Platform on an Intel NUC.  The specific
+hardware is an Intel NUC mini PC kit NUC6i7KYK (e.g. Skull Canyon)
+with the following configuration:
 
 | Feature | Details |
 | :-----: | ------- |

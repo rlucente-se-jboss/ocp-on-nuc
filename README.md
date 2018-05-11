@@ -4,11 +4,11 @@ Intel NUC.  The specific hardware is an Intel NUC mini PC kit
 NUC6i7KYK (e.g. Skull Canyon) with the following configuration:
 
 | Feature | Details |
-| ------- | ------- |
-|: CPU :| Intel 2.6 GHz 4-Core i7 6700HQ |
-|: Memory :| Crucial 32GB DDR4 2133 |
-|: Graphics :| Intel Iris Pro Graphics 580 |
-|: SSD :| Samsung 850 EVO - 500GB |
+| :-----: | ------- |
+| CPU | Intel 2.6 GHz 4-Core i7 6700HQ |
+| Memory | Crucial 32GB DDR4 2133 |
+| Graphics | Intel Iris Pro Graphics 580 |
+| SSD | Samsung 850 EVO - 500GB |
 
 ![My Little NUC](my-intel-nuc.png?raw=true "My Little NUC")
 

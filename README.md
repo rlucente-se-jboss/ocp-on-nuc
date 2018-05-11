@@ -44,12 +44,13 @@ admin user as well as an unprivileged user.
 
 The following username/passwords are created:
 
-* admin/admin
-* developer/developer
+* `admin/admin`
+* `developer/developer`
 
 ## Create Persistent Volumes
 Run the following script as root to create one hundred 10 GiB
-persistent volumes.  The directories are under `/mnt/data`.
+persistent volumes.  The persistent volume directories are under
+`/mnt/data`.
 
     ./create-pvs.sh
 

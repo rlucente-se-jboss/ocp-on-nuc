@@ -15,7 +15,7 @@ hardware is an Intel NUC mini PC kit NUC6i7KYK (e.g. Skull Canyon).
 
 ## Install RHEL
 Install RHEL 7.5 using the minimal package set.  Create the following
-mount points on the disk:
+mount points on the disk.  The sizes are scaled for the 500 GB SSD.
 
 * /boot with 2 GiB
 * / with 394 GiB

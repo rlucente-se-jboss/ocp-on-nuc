@@ -121,8 +121,8 @@ The contents of /etc/config/wireless should be:
             option 'key' 'UPSTREAM-WIFI-PASSWORD'
 
 Obviously, the `macaddr` should match the MAC address for your
-router's WiFi device and the `ssid` and `key` should match the
-upstream WiFi network.
+router's WiFi device and the `ssid`, `encryption`, and `key` should
+match what's required to connect to the upstream WiFi access point.
 
 Finally, type the following to enable the WiFi masquerading.
 

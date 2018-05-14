@@ -5,14 +5,21 @@ multiple demo environments.  My goal is to provide connectivity to
 the broader public internet while enabling my laptop to easily
 connect to my OCP instance at a stable IP address.
 
+I blew the dust off an old Linksys WRT54G v2 WiFi router to repurpose
+for this.
+
 ![Old But Reliable Linksys Router](linksys-router.png)
+
+My intention is to use the LAN interfaces to connect my NUC running
+OpenShift to my laptop, with both being on the same subnet.  The
+WiFi interface on the router is configured to connect all the LAN
+devices to the WAN, using IP masquerading.
 
 # Update the Router Firmware
 The following instructions to update the router firmware are adapted
 from the [OpenWRT wiki](https://wiki.openwrt.org/toh/linksys/wrt54g#installing_openwrt).
 
-I have an an old Linksys WRT54G v2 WiFi router to repurpose for
-this.  To customize it and to bring the firmware to a more recent
+To customize it and to bring the firmware to a more recent
 release, reimage the router to use [OpenWRT](https://openwrt.org).
 Specifically, put the following software on the WRT54G router:
 

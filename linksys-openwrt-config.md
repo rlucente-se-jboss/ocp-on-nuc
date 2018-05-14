@@ -10,10 +10,12 @@ for this.
 
 ![Old But Reliable Linksys Router](linksys-router.png)
 
-My intention is to use the LAN interfaces to connect my NUC running
-OpenShift to my laptop, with both being on the same subnet.  The
-WiFi interface on the router is configured to connect all the LAN
-devices to the WAN, using IP masquerading.
+My intention is to connect both my NUC running OpenShift and my
+laptop to the LAN interfaces on the router so they're both on the
+same subnet with the NUC having a stable IP assignment.  The WiFi
+interface on the router is configured to connect all the LAN devices
+to the WAN, using IP masquerading, so there is access to the outside
+world.
 
 # Update the Router Firmware
 The following instructions to update the router firmware are adapted

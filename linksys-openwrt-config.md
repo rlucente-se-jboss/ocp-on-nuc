@@ -1,9 +1,9 @@
 # Overview
-One of the needs is to have a stable IP address for my OCP instance
-regardless of where I'm running it.  This makes it portable across
-multiple demo environments.  My goal is to provide connectivity to
-the broader public internet while enabling my laptop to easily
-connect to my OCP instance at a stable IP address.
+I want to have a stable IP address for my OCP instance regardless
+of where I'm running it.  This makes it portable across multiple
+demo environments.  My goal is to provide connectivity to the broader
+public internet while enabling my laptop to easily connect to my
+OCP instance at a stable IP address.
 
 I blew the dust off an old Linksys WRT54G v2 WiFi router to repurpose
 for this.
@@ -23,7 +23,7 @@ from the [OpenWRT wiki](https://wiki.openwrt.org/toh/linksys/wrt54g#installing_o
 
 To customize it and to bring the firmware to a more recent
 release, reimage the router to use [OpenWRT](https://openwrt.org).
-Specifically, put the following software on the WRT54G router:
+Specifically, put the following software on the WRT54G router as described below:
 
 * openwrt-wrt54g-squashfs.bin
 * openwrt-brcm47xx-squashfs.trx

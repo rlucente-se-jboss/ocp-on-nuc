@@ -3,7 +3,7 @@
 . $(dirname $0)/install.conf
 
 # configure subscription repositories
-subscription-manager register --username=$RHN_USER --password=$RHN_PASS
+subscription-manager register --username=$RHSM_USER --password=$RHSM_PASS
 
 if [ -z "$POOL_ID" ]
 then

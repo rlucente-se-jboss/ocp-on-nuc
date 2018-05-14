@@ -34,6 +34,13 @@ and my laptop and to provide a connection to the outside world.
 These [instructions](linksys-openwrt-config.md) describe how I did
 that.
 
+## Edit the Configuration
+Edit the `install.conf` and update the parameters as necessary.  At
+a minimum, you'll need to update `RHSM_USER` and `RHSM_PASS` to
+match your credentials for the [Red Hat Customer
+Portal](https://access.redhat.com).  Optionally, you can asign the
+`POOL_ID` to match one of your entitlements.
+
 ## Prepare the Server
 Run the following script as root to prepare the server for installs.
 This script registers the system and creates the docker-vg volume

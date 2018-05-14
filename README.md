@@ -57,7 +57,8 @@ admin user as well as an unprivileged user.
 
     ./install-server.sh
 
-The following username/passwords are created:
+Unless you changed the parameters in `install.conf`, the following
+username/passwords are created:
 
 * `admin/admin`
 * `developer/developer`

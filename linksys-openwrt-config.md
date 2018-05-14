@@ -5,6 +5,8 @@ multiple demo environments.  My goal is to provide connectivity to
 the broader public internet while enabling my laptop to easily
 connect to my OCP instance at a stable IP address.
 
+![Old But Reliable Linksys Router](linksys-router.png)
+
 # Update the Router Firmware
 The following instructions to update the router firmware are adapted
 from the [OpenWRT wiki](https://wiki.openwrt.org/toh/linksys/wrt54g#installing_openwrt).

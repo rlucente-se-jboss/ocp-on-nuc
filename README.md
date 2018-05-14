@@ -24,7 +24,8 @@ mount points on the disk.  The sizes are scaled for the 500 GB SSD.
 
 This leaves just over 100 GiB for the docker-vg volume group which
 will be created later.  Make sure to set the root password and also
-create an unprivileged user (with sudo privileges).
+create an unprivileged user (with sudo privileges).  In my
+configuration, I also disabled the onboard WiFi interface.
 
 ## Enable Stable Networking
 I want to make this portable to any site for demonstrations with

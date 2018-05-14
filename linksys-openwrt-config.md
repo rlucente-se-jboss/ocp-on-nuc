@@ -64,8 +64,8 @@ Set the LAN IP address to something that does not conflict with the wireless net
 
 I chose `10.123.123.0/24` for my LAN network.  Disconnect the LAN
 network cable since the IP addresses are updated and wait for router
-to restart.  When power LED is solid green, reconnect the LAN network
-cable.
+to restart.  When the power LED is solid green, reconnect the LAN
+network cable.
 
 ## Enable the WiFi
 Use the following commands to enable the WiFi device.

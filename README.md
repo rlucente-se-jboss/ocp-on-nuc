@@ -18,11 +18,12 @@ Install RHEL 7.5 using the minimal package set.  Create the following
 mount points on the disk.  The sizes are scaled for the 500 GB SSD.
 
 * /boot with 2 GiB
-* / with 394 GiB
+* /boot/efi with 1 GiB
+* / with 358 GiB
 * swap with 4 GiB
 
-This leaves about 100 GiB for the docker-vg volume group which will
-be created later.  Make sure to set the root password and also
+This leaves just over 100 GiB for the docker-vg volume group which
+will be created later.  Make sure to set the root password and also
 create an unprivileged user (with sudo privileges).
 
 ## Enable Stable Networking
@@ -32,7 +33,6 @@ that, I repurposed an old WiFi router to enable a LAN for my NUC
 and my laptop and to provide a connection to the outside world.
 These [instructions](linksys-openwrt-config.md) describe how I did
 that.
-
 
 ## Prepare the Server
 Run the following script as root to prepare the server for installs.

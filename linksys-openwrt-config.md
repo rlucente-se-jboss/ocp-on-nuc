@@ -130,6 +130,14 @@ Finally, type the following to enable the WiFi masquerading.
     ifup wan
     wifi
 
+# Set Stable Networking
+To assign a static lease to a server on the LAN via DHCP, open the
+LUCI web interface to the router and then select `Network -> DHCP
+and DNS`.  At the bottom of that page, you'll see existing leases
+and a form to add static leases.  Click the `Add` button.  When the
+blank form appears, leave `Hostname` blank, set `MAC-Address` to
+the server's MAC, and set the desired `IPv4-Address`.
+
 # Using Alternative WiFi Network
 To change to a different WiFi network, simply edit the `wifi-iface`
 section in /etc/config/wireless and then issue the commands:

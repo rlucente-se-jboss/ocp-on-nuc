@@ -62,9 +62,10 @@ Set the LAN IP address to something that does not conflict with the wireless net
     sed -i ’s/192.168.1./10.123.123./g’ /etc/rc.d/S05netconfig
     reboot; exit
 
-Disconnect the LAN network cable since the IP addresses are updated
-and wait for router to restart.  When power LED is solid green,
-reconnect the LAN network cable
+I chose `10.123.123.0/24` for my LAN network.  Disconnect the LAN
+network cable since the IP addresses are updated and wait for router
+to restart.  When power LED is solid green, reconnect the LAN network
+cable.
 
 ## Enable the WiFi
 Use the following commands to enable the WiFi device.

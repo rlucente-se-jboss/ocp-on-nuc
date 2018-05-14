@@ -33,7 +33,7 @@ Reflash the manufacturer stock firmware with the
 openwrt-wrt54g-squashfs.bin file.
 
 ## Set Authentication Credentials
-Reboot the router and log in via the [default LUCI web interface](http://192.168.1.1/).
+Reboot the router and log in via the [default LuCI web interface](http://192.168.1.1/).
 For login credentials, use `root` with no password.  In the web
 interface, select `System` in the top row of tabs and `Administration`
 in the second row.  Set the `root` password, set the Dropbear
@@ -42,7 +42,7 @@ login via SSH.  Click the `Save & Apply` button at the bottom of
 the web page.
 
 ## Update Broadcom SoC Firmware
-Download the openwrt-brcm47xxx-squashfs.trx.  On the LUCI web site,
+Download the openwrt-brcm47xxx-squashfs.trx.  On the LuCI web site,
 select `System -> Flash firmware` and select the file you downloaded.
 
 The Linksys WRT54G v2 router will now be running OpenWRT 10.03.1
@@ -132,7 +132,7 @@ Finally, type the following to enable the WiFi masquerading.
 
 # Set Stable Networking
 To assign a static lease to a server on the LAN via DHCP, open the
-LUCI web interface to the router and then select `Network -> DHCP
+LuCI web interface to the router and then select `Network -> DHCP
 and DNS`.  At the bottom of that page, you'll see existing leases
 and a form to add static leases.  Click the `Add` button.  When the
 blank form appears, leave `Hostname` blank, set `MAC-Address` to

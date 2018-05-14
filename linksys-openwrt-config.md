@@ -1,9 +1,9 @@
 # Overview
-I want to have a stable IP address for my OCP instance regardless
+I want to have a static IP address for my OCP instance regardless
 of where I'm running it.  This makes it portable across multiple
 demo environments.  My goal is to provide connectivity to the broader
 public internet while enabling my laptop to easily connect to my
-OCP instance at a stable IP address.
+OCP instance at a static IP address.
 
 I blew the dust off an old Linksys WRT54G v2 WiFi router to repurpose
 for this.
@@ -12,7 +12,7 @@ for this.
 
 My intention is to connect both my NUC running OpenShift and my
 laptop to the LAN interfaces on the router so they're both on the
-same subnet with the NUC having a stable IP assignment.  The WiFi
+same subnet with the NUC having a static IP assignment.  The WiFi
 interface on the router is configured to connect all the LAN devices
 to the WAN, using IP masquerading, so there is access to the outside
 world.

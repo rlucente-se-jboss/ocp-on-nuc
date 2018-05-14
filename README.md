@@ -25,6 +25,15 @@ This leaves about 100 GiB for the docker-vg volume group which will
 be created later.  Make sure to set the root password and also
 create an unprivileged user (with sudo privileges).
 
+## Enable Stable Networking
+I want to make this portable to any site for demonstrations with
+the ability to have a predictable IP address for the NUC.  To do
+that, I repurposed an old WiFi router to enable a LAN for my NUC
+and my laptop and to provide a connection to the outside world.
+These [instructions](linksys-openwrt-config.md) describe how I did
+that.
+
+
 ## Prepare the Server
 Run the following script as root to prepare the server for installs.
 This script registers the system and creates the docker-vg volume

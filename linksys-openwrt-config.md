@@ -1,3 +1,9 @@
+NB:  This router is a bit slow for supporting OCP operations, making
+it barely workable.  I'm investigating a lighterweight and faster
+travel router configuration with OpenWRT.  Please see these
+instructions to [Configure A(ccess) P(oint or 'hotspot') + STA(tion
+or 'client')](https://openwrt.org/docs/guide-user/network/wifi/ap_sta).
+
 # Overview
 I want to have a static IP address for my OCP instance regardless
 of where I'm running it.  This makes it portable across multiple

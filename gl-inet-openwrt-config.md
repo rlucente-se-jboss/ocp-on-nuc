@@ -8,7 +8,7 @@ OCP instance since it has a static IP address.
 To do this, I bought an inexpensive small travel wireless router,
 the [GL.iNet MT300A](https://www.gl-inet.com/mt300a/).
 
-![GL-MT300A AZURE](gl-mt300a-travel-router.png = 396x315)
+<img src="gl-mt300a-travel-router.png" align="center" height="396" width="315">
 
 These instructions use the travel router to create a small LAN for
 both the NUC running OpenShift and my laptop while also providing

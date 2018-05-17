@@ -100,5 +100,5 @@ the server's ethernet inteface MAC, and set the desired static
 
 # Using Alternative WiFi Networks
 To change to a different WiFi network, simply add additional `wifi-iface`
-sections in /etc/config/wireless and cycle power on the router.
+sections in `/etc/config/wireless` and cycle power on the router.
 

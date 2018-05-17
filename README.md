@@ -30,10 +30,10 @@ configuration, I also disabled the onboard WiFi interface.
 ## Enable Stable Networking
 I want to make this portable to any site for demonstrations with
 the ability to have a predictable IP address for the NUC.  To do
-that, I repurposed an old WiFi router to enable a LAN for my NUC
-and my laptop and to provide a connection to the outside world.
-These [instructions](linksys-openwrt-config.md) describe how I did
-that.
+that, I purchased a small WiFi travel router to enable a LAN for
+my NUC and my laptop and to provide a connection to the outside
+world.  These [instructions](gl-inet-openwrt-config.md) describe
+how I did that.
 
 ## Edit the Configuration
 Edit the `install.conf` and update the parameters as necessary.  At

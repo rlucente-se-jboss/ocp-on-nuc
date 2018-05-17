@@ -4,7 +4,7 @@ travel router configuration with OpenWRT.  Please see these
 instructions to [Configure A(ccess) P(oint or 'hotspot') + STA(tion
 or 'client')](https://openwrt.org/docs/guide-user/network/wifi/ap_sta).
 The travel router has the added benefit of being powered by USB so
-fewer cables are involved.
+fewer power plugs are involved.
 
 # Overview
 I want to have a static IP address for my OCP instance regardless

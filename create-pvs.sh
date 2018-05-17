@@ -6,6 +6,7 @@ for i in {0..99}
 do
 	DIRNAME=$(printf "vol%02d" $i)
 	mkdir -p /mnt/data/$DIRNAME
+        chmod a+rwx /mnt/data/$DIRNAME
 	chcon -Rt svirt_sandbox_file_t /mnt/data/$DIRNAME
 done
 

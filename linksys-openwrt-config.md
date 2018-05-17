@@ -147,8 +147,8 @@ blank form appears, leave `Hostname` blank, set `MAC-Address` to
 the server's MAC, and set the desired `IPv4-Address`.
 
 # Using Alternative WiFi Network
-To change to a different WiFi network, simply edit the `wifi-iface`
-section in /etc/config/wireless and then issue the commands:
+To change to a different WiFi network, simply add additional `wifi-iface`
+sections in /etc/config/wireless and then issue the commands:
 
     ifup wan
     wifi

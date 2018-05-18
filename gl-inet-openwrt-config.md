@@ -35,10 +35,9 @@ source firmware for maximum control.
 
 First, make sure to backup your existing firmware in case this all
 takes a hard left turn.  The included travel router instructions
-cover powering it up, connecting to the [default web
-interface](http://192.168.8.1/) and logging in for the first time.
-Go to the appropriate web page to update the firmware and download
-a backup.
+cover powering it up, connecting to the default web interface,
+http://192.168.8.1/, and logging in for the first time.  Go to the
+appropriate web page to update the firmware and download a backup.
 
 Next, grab the latest firmware from the [OpenWRT upgrade
 URL](http://downloads.lede-project.org/releases/17.01.4/targets/ramips/mt7620/lede-17.01.4-ramips-mt7620-gl-mt300a-squashfs-sysupgrade.bin).

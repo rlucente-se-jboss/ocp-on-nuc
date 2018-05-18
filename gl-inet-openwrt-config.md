@@ -6,7 +6,10 @@ public internet while enabling my laptop to easily connect to my
 OCP instance since it has a static IP address.
 
 To do this, I bought an inexpensive small travel wireless router,
-the [GL.iNet MT300A](https://www.gl-inet.com/mt300a/).
+the [GL.iNet MT300A](https://www.gl-inet.com/mt300a/).  NB: There
+is a little switch on the side with no label that's set to the
+right.  I don't know what this switch does, but setting it to the
+right didn't prevent this from working.
 
 <img src="gl-mt300a-travel-router.png" align="center" height="315" width="396">
 

@@ -92,6 +92,8 @@ STA(tion or 'client').  This is known as AP+STA mode.  I followed
 steps 1 and 2, ignored step 3, and then followed optional step 4,
 using the latest [wwanHotspot
 release](https://github.com/jordi-pujol/wwanHotspot/releases).
+You'll use the latest release with the [wwanHotspot
+instructions](https://github.com/jordi-pujol/wwanHotspot).
 
 # Set Stable Networking
 To assign a static lease to a server on the LAN via DHCP, open the

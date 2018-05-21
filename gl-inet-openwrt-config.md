@@ -108,6 +108,8 @@ addresses for the NUC's ethernet and WiFi interfaces are printed
 on the bottom of the device.
 
 # Using Alternative WiFi Networks
-To change to a different WiFi network, simply add additional
-`wifi-iface` sections in `/etc/config/wireless` and cycle power on
-the router.
+To connect to additional WiFi access points, simply add the ssid,
+encryption method, and key for the WiFi access point to the to the
+`/etc/config/wwanHotspot` configuration file on the travel router.
+At power up, it will connect to the first WiFi access point it
+finds.

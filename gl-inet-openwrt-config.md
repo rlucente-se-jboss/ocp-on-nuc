@@ -89,7 +89,9 @@ Follow these
 [instructions](https://openwrt.org/docs/guide-user/network/wifi/ap_sta) to
 configure the travel router as an A(ccess) P(oint or 'hotspot') +
 STA(tion or 'client').  This is known as AP+STA mode.  I followed
-steps 1 through 3 and ignored optional step 4.
+steps 1 and 2, ignored step 3, and then followed optional step 4,
+using the latest [wwanHotspot
+release](https://github.com/jordi-pujol/wwanHotspot/releases).
 
 # Set Stable Networking
 To assign a static lease to a server on the LAN via DHCP, open the

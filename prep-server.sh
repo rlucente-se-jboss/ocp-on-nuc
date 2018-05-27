@@ -10,7 +10,7 @@ then
     POOL_ID=$(subscription-manager list --available | \
         grep 'Subscription Name\|Pool ID' | \
         grep -A1 'OpenShift Employee Subscription' | \
-        grep 'Pool ID' | awk '{print $NF}')
+        grep 'Pool ID' | awk '{print $NF; exit}')
 fi
 
 subscription-manager attach --pool=$POOL_ID

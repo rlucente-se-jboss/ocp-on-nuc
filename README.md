@@ -71,3 +71,17 @@ persistent volumes.  The persistent volume directories are under
 
     ./create-pvs.sh
 
+# Upgrade the Server
+To upgrade to the latest version of OpenShift, follow the upgrade
+instructions in the official docs.  As a help, three scripts are
+provided, but always check to make sure they match the instuctions in
+the OpenShift documentation.  Edit `install.conf` and make sure that
+`VERSION` is correct.  Then run the script:
+
+    ./upgrade-server.sh
+
+Reboot the computer.  When the system is back up, run:
+
+    ./upgrade-logging.sh
+    ./upgrade-metrics.sh
+

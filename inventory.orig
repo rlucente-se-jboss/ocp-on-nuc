@@ -33,10 +33,13 @@ template_service_broker_selector={"region":"infra"}
 osm_use_cockpit=true
 
 openshift_metrics_install_metrics=${METRICS}
+openshift_metrics_image_version=${VERSION}
+
 openshift_logging_install_logging=${LOGGING}
 
 openshift_logging_es_cluster_size=1
 openshift_logging_es_memory_limit=4G
+openshift_logging_image_version=${VERSION}
 
 openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
 

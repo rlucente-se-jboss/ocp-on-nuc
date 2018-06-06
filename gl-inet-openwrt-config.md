@@ -73,15 +73,15 @@ Set the LAN IP address to something that does not conflict with any
 wireless network you may use.  It's a tall order but I selected
 `10.123.123.0/24` with the router listening at `10.123.123.1`.  To
 do this, change the IPv4 address field on the `Interfaces - LAN`
-page at http://10.123.123.1/cgi-bin/luci/admin/network/network/lan
+page at http://192.168.1.1/cgi-bin/luci/admin/network/network/lan
 and then click `Save & Apply` at the bottom.
 
 Once again, you'll need to refresh the DHCP lease on your laptop
 to get your new IP address.
 
 ## Enable the WiFi
-Go to the router's `Wireless Overview` page at
-http://10.123.123.1/cgi-bin/luci/admin/network/wireless page to
+Go to the router's `Wireless Overview` page now at
+http://10.123.123.1/cgi-bin/luci/admin/network/wireless to
 enable the WiFi radio.
 
 ## Configure Masquerading

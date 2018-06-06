@@ -1,8 +1,20 @@
 # ocp-on-nuc
+## Why put OpenShift Container Platform on a NUC?
+Well, why not?  But the compelling reason for me is that I need
+more resources to run some of the expansive examples with OpenShift.
+My Macbook is limited to 16 GB RAM so I don't have enough to allocate
+to a minishift virtual machine.  I suppose I could host my demos in
+the cloud but that isn't always feasible for me and I'm no fan of
+the monthly bill.  This solution gives me a portable environment
+to take anywhere to show off OCP features.  Plus it looks cool.
+
 Use these instructions, adapted from [Grant Shipley's excellent
 OpenShift Origin instructions](https://github.com/gshipley/installcentos),
-to run OpenShift Container Platform on an Intel NUC.  The specific
-hardware is an Intel NUC mini PC kit NUC6i7KYK (e.g. Skull Canyon).
+to run OpenShift Container Platform on an Intel NUC.
+
+## Get the Hardware
+The specific hardware is an Intel NUC mini PC kit NUC6i7KYK (e.g.
+Skull Canyon).
 
 ![My Little NUC](my-intel-nuc.png)
 

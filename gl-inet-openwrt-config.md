@@ -66,7 +66,7 @@ of the web page.
 # Configure WiFi Masquerading
 Now, configure the travel router to provide a LAN using both the
 LAN ethernet port and the WiFi interface while simultaneously
-providing a wirless WAN connection as a WiFi client.
+providing a wireless WAN connection as a WiFi client.
 
 ## Change the default IP Address
 Set the LAN IP address to something that does not conflict with any

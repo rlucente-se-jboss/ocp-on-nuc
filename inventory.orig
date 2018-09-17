@@ -4,13 +4,13 @@ nodes
 etcd
 
 [masters]
-${IP} openshift_ip=${IP} openshift_schedulable=true 
+${IP} openshift_ip=${IP} openshift_schedulable=true
 
 [etcd]
 ${IP} openshift_ip=${IP}
 
 [nodes]
-${IP} openshift_ip=${IP} openshift_schedulable=true openshift_node_labels="{'region': 'infra', 'zone': 'default', 'node-role.kubernetes.io/compute': 'true'}"
+${IP} openshift_ip=${IP} openshift_schedulable=true openshift_node_group_name="node-config-all-in-one"
 
 [OSEv3:vars]
 ansible_ssh_user=root
@@ -29,19 +29,18 @@ openshift_deployment_type=openshift-enterprise
 
 
 template_service_broker_selector={"region":"infra"}
-
+openshift_metrics_image_version=${VERSION}
+openshift_logging_image_version=${VERSION}
 osm_use_cockpit=true
 
 openshift_metrics_install_metrics=${METRICS}
-openshift_metrics_image_version=${VERSION}
-
 openshift_logging_install_logging=${LOGGING}
 
 openshift_logging_es_cluster_size=1
 openshift_logging_es_memory_limit=4G
-openshift_logging_image_version=${VERSION}
 
-openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
+openshift_master_htpasswd_file='/etc/origin/master/htpasswd'
 
 openshift_public_hostname=console.${DOMAIN}
 openshift_master_default_subdomain=apps.${DOMAIN}

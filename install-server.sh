@@ -2,7 +2,7 @@
 
 . $(dirname $0)/install.conf
 
-yum -y install atomic-openshift-utils docker-1.13.1 atomic
+yum -y install openshift-ansible docker-1.13.1 atomic
 
 MYHOSTNAME=
 if [ -z "$(hostname | grep localhost)" ]
@@ -24,6 +24,18 @@ docker-storage-setup
 
 systemctl restart docker
 systemctl enable docker
+
+if [ "${OFFLINE_REPO_IP}" ]
+then
+    for repo in ose3-builder-images ose3-images  \
+        ose3-logging-metrics-images ose3-service-catalog
+    do
+        echo "Fetching ${repo}.tar from ${OFFLINE_REPO_IP}"
+        wget -q http://${OFFLINE_REPO_IP}/repos/images/${repo}.tar
+        docker load -i ${repo}.tar
+        rm -f ${repo}.tar
+    done
+fi
 
 if [ ! -f ~/.ssh/id_rsa ]; then
     ssh-keygen -q -f ~/.ssh/id_rsa -N ""

@@ -1,3 +1,5 @@
+NB:  Offline install is still WIP
+
 # ocp-on-nuc
 ## Why put OpenShift Container Platform on a NUC?
 Well, why not?  But the compelling reason for me is that I need

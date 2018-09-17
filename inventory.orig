@@ -29,8 +29,8 @@ openshift_deployment_type=openshift-enterprise
 
 
 template_service_broker_selector={"region":"infra"}
-openshift_metrics_image_version=${VERSION}
-openshift_logging_image_version=${VERSION}
+openshift_metrics_image_version=${METRICS_VERSION}
+openshift_logging_image_version=${LOGGING_VERSION}
 osm_use_cockpit=true
 
 openshift_metrics_install_metrics=${METRICS}

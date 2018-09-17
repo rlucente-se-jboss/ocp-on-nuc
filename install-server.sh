@@ -44,6 +44,7 @@ if [ ! -f ~/.ssh/id_rsa ]; then
 fi
 
 envsubst < inventory.orig > inventory.ini
+touch /etc/origin/master/htpasswd
 
 ansible-playbook -i inventory.ini /usr/share/ansible/openshift-ansible/playbooks/prerequisites.yml
 ansible-playbook -i inventory.ini /usr/share/ansible/openshift-ansible/playbooks/deploy_cluster.yml

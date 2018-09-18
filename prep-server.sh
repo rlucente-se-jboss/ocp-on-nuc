@@ -28,7 +28,7 @@ gpgcheck=0
 EOF
 else
     # configure subscription repositories
-    subscription-manager register --username=$RHSM_USER --password=$RHSM_PASS
+    subscription-manager register --username=$RHSM_USER --password=$RHSM_PASS || exit 1
 
     if [ -z "$POOL_ID" ]
     then

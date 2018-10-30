@@ -44,6 +44,7 @@ if [ ! -f ~/.ssh/id_rsa ]; then
 fi
 
 envsubst < inventory.orig > inventory.ini
+mkdir -p /etc/origin/master
 touch /etc/origin/master/htpasswd
 
 ansible-playbook -i inventory.ini /usr/share/ansible/openshift-ansible/playbooks/prerequisites.yml

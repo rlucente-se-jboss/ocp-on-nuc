@@ -18,7 +18,7 @@ to run OpenShift Container Platform on an Intel NUC.
 The specific hardware is an Intel NUC mini PC kit NUC6i7KYK (e.g.
 Skull Canyon).
 
-![My Little NUC](my-intel-nuc.png)
+![My Little NUC](images/my-intel-nuc.png)
 
 | Feature | Description |
 | :-----: | ----------- |

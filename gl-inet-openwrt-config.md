@@ -11,7 +11,7 @@ is a little switch on the side with no label that's set to the
 right.  I don't know what this switch does, but setting it to the
 right didn't prevent this from working.
 
-<img src="gl-mt300a-travel-router.png" align="center" height="315" width="396">
+<img src="images/gl-mt300a-travel-router.png" align="center" height="315" width="396">
 
 These instructions use the travel router to create a small LAN for
 both the NUC running OpenShift and my laptop while also providing
@@ -19,7 +19,7 @@ connection to the broader public internet.  To do this, the travel
 router connects to the NUC via both an ethernet patch cable and a
 USB cable for power.
 
-![Travel Router and NUC](travel-router-and-nuc.png)
+![Travel Router and NUC](images/travel-router-and-nuc.png)
 
 The travel router provides two WiFi interfaces:  one acting as a
 local access point (AP) or 'hotspot' and the other acting as a

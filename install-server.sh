@@ -25,18 +25,6 @@ docker-storage-setup
 systemctl restart docker
 systemctl enable docker
 
-if [ "${OFFLINE_REPO_IP}" ]
-then
-    for repo in ose3-builder-images ose3-images  \
-        ose3-logging-metrics-images ose3-service-catalog
-    do
-        echo "Fetching ${repo}.tar from ${OFFLINE_REPO_IP}"
-        wget -q http://${OFFLINE_REPO_IP}/repos/images/${repo}.tar
-        docker load -i ${repo}.tar
-        rm -f ${repo}.tar
-    done
-fi
-
 if [ ! -f ~/.ssh/id_rsa ]; then
     ssh-keygen -q -f ~/.ssh/id_rsa -N ""
     cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
@@ -54,6 +42,8 @@ htpasswd -b /etc/origin/master/htpasswd ${ADMIN_USER} ${ADMIN_PASS}
 oc adm policy add-cluster-role-to-user cluster-admin ${ADMIN_USER}
 
 htpasswd -b /etc/origin/master/htpasswd ${USERNAME} ${PASSWORD}
+
+oc create secret docker-registry rhcc --docker-server=registry.redhat.io --docker-username=${RHSM_USER} --docker-password=${RHSM_PASS}
 
 echo "******"
 echo "* Your console is https://console.$DOMAIN:$API_PORT"

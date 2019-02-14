@@ -13,31 +13,31 @@ ${IP} openshift_ip=${IP}
 ${IP} openshift_ip=${IP} openshift_schedulable=true openshift_node_group_name="node-config-all-in-one"
 
 [OSEv3:vars]
+oreg_auth_user=${RHSM_USER}
+oreg_auth_password=${RHSM_PASS}
+
 ansible_ssh_user=root
 enable_excluders=False
 enable_docker_excluder=False
 ansible_service_broker_install=False
 
-#containerized=True
+containerized=True
 os_sdn_network_plugin_name='redhat/openshift-ovs-multitenant'
 openshift_disable_check=disk_availability,docker_storage,memory_availability,docker_image_availability
-
-openshift_node_kubelet_args={'pods-per-core': ['10']}
 
 deployment_type=openshift-enterprise
 openshift_deployment_type=openshift-enterprise
 
-
 template_service_broker_selector={"region":"infra"}
-openshift_metrics_image_version=${METRICS_VERSION}
-openshift_logging_image_version=${LOGGING_VERSION}
+openshift_metrics_image_version="v${VERSION}"
+openshift_logging_image_version="v${VERSION}"
+openshift_logging_elasticsearch_proxy_image_version="v1.0.0"
+openshift_logging_es_nodeselector={"node-role.kubernetes.io/infra":"true"}
+logging_elasticsearch_rollout_override=false
 osm_use_cockpit=true
 
 openshift_metrics_install_metrics=${METRICS}
 openshift_logging_install_logging=${LOGGING}
-
-openshift_logging_es_cluster_size=1
-openshift_logging_es_memory_limit=4G
 
 openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
 openshift_master_htpasswd_file='/etc/origin/master/htpasswd'
@@ -46,3 +46,9 @@ openshift_public_hostname=console.${DOMAIN}
 openshift_master_default_subdomain=apps.${DOMAIN}
 openshift_master_api_port=${API_PORT}
 openshift_master_console_port=${API_PORT}
+
+openshift_node_kubelet_args={'pods-per-core': ['10']}
+
+openshift_logging_es_cluster_size=1
+openshift_logging_es_memory_limit=4G
+

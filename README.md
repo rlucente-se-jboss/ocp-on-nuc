@@ -1,5 +1,3 @@
-NB:  Offline install is still WIP
-
 # ocp-on-nuc
 ## Why put OpenShift Container Platform on a NUC?
 Well, why not?  But the compelling reason for me is that I need
@@ -28,7 +26,7 @@ Skull Canyon).
 | SSD | Samsung 850 EVO - 500GB |
 
 ## Install RHEL
-Install RHEL 7.5 using the minimal package set.  Create the following
+Install RHEL 7.6 using the minimal package set.  Create the following
 mount points on the disk.  The sizes are scaled for the 500 GB SSD.
 
 * /boot with 2 GiB

@@ -2,55 +2,27 @@
 
 . $(dirname $0)/install.conf
 
-if [ "$OFFLINE_REPO_IP" ]
+# configure subscription repositories
+subscription-manager register --username=$RHSM_USER --password=$RHSM_PASS \
+    || exit 1
+
+if [ -z "$POOL_ID" ]
 then
-    cat <<EOF > /etc/yum.repos.d/ose.repo
-[rhel-7-server-rpms]
-name=rhel-7-server-rpms
-baseurl=http://${OFFLINE_REPO_IP}/repos/rhel-7-server-rpms
-enabled=1
-gpgcheck=0
-[rhel-7-server-extras-rpms]
-name=rhel-7-server-extras-rpms
-baseurl=http://${OFFLINE_REPO_IP}/repos/rhel-7-server-extras-rpms
-enabled=1
-gpgcheck=0
-[rhel-7-server-ansible-2.4-rpms]
-name=rhel-7-server-ansible-2.4-rpms
-baseurl=http://${OFFLINE_REPO_IP}/repos/rhel-7-server-ansible-2.4-rpms
-enabled=1
-gpgcheck=0
-[rhel-7-server-ose-3.10-rpms]
-name=rhel-7-server-ose-3.10-rpms
-baseurl=http://${OFFLINE_REPO_IP}/repos/rhel-7-server-ose-3.10-rpms
-enabled=1
-gpgcheck=0
-EOF
-else
-    # configure subscription repositories
-    subscription-manager register --username=$RHSM_USER --password=$RHSM_PASS || exit 1
-
-    if [ -z "$POOL_ID" ]
-    then
-        POOL_ID=$(subscription-manager list --available | \
-            grep 'Subscription Name\|Pool ID' | \
-            grep -A1 'Employee SKU' | \
-            grep 'Pool ID' | awk '{print $NF; exit}')
-    fi
-
-    subscription-manager attach --pool=$POOL_ID
-    subscription-manager repos --disable='*'
-    subscription-manager repos \
-        --enable=rhel-7-server-rpms \
-        --enable=rhel-7-server-extras-rpms \
-        --enable=rhel-7-server-ose-3.10-rpms \
-        --enable=rhel-7-server-ansible-2.4-rpms
+    POOL_ID=$(subscription-manager list --available | \
+    grep 'Subscription Name\|Pool ID' | \
+    grep -A1 'Employee SKU' | \
+    grep 'Pool ID' | awk '{print $NF; exit}')
 fi
 
-# install needed packages and update the system
-yum -y install \
-    wget git net-tools bind-utils yum-utils iptables-services bridge-utils \
-    bash-completion kexec-tools sos psacct
+subscription-manager attach --pool=$POOL_ID
+subscription-manager repos --disable='*'
+subscription-manager repos \
+    --enable=rhel-7-server-rpms \
+    --enable=rhel-7-server-extras-rpms \
+    --enable=rhel-7-server-ose-3.11-rpms \
+    --enable=rhel-7-server-ansible-2.6-rpms
+
+# update the system
 yum -y update
 
 # configure a separate volume group for docker (e.g. docker-vg)

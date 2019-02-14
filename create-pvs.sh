@@ -22,10 +22,3 @@ do
 	echo "created volume $i"
 done
 
-# fix issue where requested ose-recycler image tag is wrong
-docker pull \
-    registry.access.redhat.com/openshift3/ose-recycler:$RECYCLE_VERSION
-docker image tag \
-    registry.access.redhat.com/openshift3/ose-recycler:$RECYCLE_VERSION \
-    registry.access.redhat.com/openshift3/ose-recycler:v1.10.0
-

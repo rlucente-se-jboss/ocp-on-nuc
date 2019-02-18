@@ -3,18 +3,19 @@
 . $(dirname $0)/install.conf
 
 # configure subscription repositories
-subscription-manager register --username=$RHSM_USER --password=$RHSM_PASS \
+subscription-manager register --username="$RHSM_USER" --password="$RHSM_PASS" \
     || exit 1
 
 if [ -z "$POOL_ID" ]
 then
     POOL_ID=$(subscription-manager list --available | \
-    grep 'Subscription Name\|Pool ID' | \
-    grep -A1 'Employee SKU' | \
+    grep 'Subscription Name\|Pool ID\|System Type' | \
+    grep -A2 'Employee SKU' | \
+    grep -B1 Physical | \
     grep 'Pool ID' | awk '{print $NF; exit}')
 fi
 
-subscription-manager attach --pool=$POOL_ID
+subscription-manager attach --pool="$POOL_ID" || exit 1
 subscription-manager repos --disable='*'
 subscription-manager repos \
     --enable=rhel-7-server-rpms \

@@ -35,6 +35,12 @@ envsubst < inventory.orig > inventory.ini
 mkdir -p /etc/origin/master
 touch /etc/origin/master/htpasswd
 
+echo
+echo "Pause here so you can load the docker images from separate storage"
+echo
+echo "Press ENTER to continue ..."
+read answer
+
 ansible-playbook -i inventory.ini /usr/share/ansible/openshift-ansible/playbooks/prerequisites.yml
 ansible-playbook -i inventory.ini /usr/share/ansible/openshift-ansible/playbooks/deploy_cluster.yml
 

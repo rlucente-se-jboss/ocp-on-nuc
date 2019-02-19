@@ -39,9 +39,6 @@ parted $DISK set $PARTNUM lvm on
 pvcreate ${DISK}${PARTNUM}
 vgcreate docker-vg ${DISK}${PARTNUM}
 
-# limit hang on shutdown to just over a minute
-sed -i 's/^#\(DefaultTimeoutStopSec\)=90s/\1=30s/g' /etc/systemd/system.conf
-
 yum -y clean all
 systemctl reboot
 

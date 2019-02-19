@@ -13,6 +13,8 @@ ${IP} openshift_ip=${IP}
 ${IP} openshift_ip=${IP} openshift_schedulable=true openshift_node_group_name="node-config-all-in-one"
 
 [OSEv3:vars]
+openshift_cluster_monitoring_operator_install=false
+
 oreg_auth_user=${RHSM_USER}
 oreg_auth_password=${RHSM_PASS}
 

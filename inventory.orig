@@ -49,7 +49,7 @@ openshift_master_default_subdomain=apps.${DOMAIN}
 openshift_master_api_port=${API_PORT}
 openshift_master_console_port=${API_PORT}
 
-openshift_node_groups=[{'name': 'node-config-all-in-one', 'edits': [{ 'key': 'kubeletArguments.pods-per-core','value': ['10']}]}]
+openshift_node_groups=[{'name': 'node-config-all-in-one', 'labels': ['node-role.kubernetes.io/master=true', 'node-role.kubernetes.io/infra=true', 'node-role.kubernetes.io/compute=true'], 'edits': [{ 'key': 'kubeletArguments.pods-per-core','value': ['10']}]}]
 
 openshift_logging_es_cluster_size=1
 openshift_logging_es_memory_limit=4G

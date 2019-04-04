@@ -27,7 +27,7 @@ subscription-manager repos \
 yum -y update
 
 # configure a separate volume group for docker (e.g. docker-vg)
-DISK=$(parted -l | grep Disk | awk '{print $2; exit}' | cut -d: -f1)
+DISK=$(parted -l | grep Disk | grep -v 'mapper\|Flags' | awk '{print $2; exit}' | cut -d: -f1)
 FREESPACE=$(parted $DISK print free | grep 'Free Space' | tail -1)
 START=$(echo $FREESPACE | awk '{print $1}')
 END=$(echo $FREESPACE | awk '{print $2}')
@@ -36,8 +36,9 @@ parted $DISK mkpart primary $START $END
 PARTNUM=$(parted $DISK print | sort -n | tail -1 | awk '{print $1}')
 parted $DISK set $PARTNUM lvm on
 
-pvcreate ${DISK}${PARTNUM}
-vgcreate docker-vg ${DISK}${PARTNUM}
+PARTNAME=$(blkid | grep $DISK | cut -d: -f1 | sort | tail -1)
+pvcreate $PARTNAME
+vgcreate docker-vg $PARTNAME
 
 yum -y clean all
 systemctl reboot

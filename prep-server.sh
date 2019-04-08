@@ -31,14 +31,26 @@ DISK=$(parted -l | grep Disk | grep -v 'mapper\|Flags' | awk '{print $2; exit}' 
 FREESPACE=$(parted $DISK print free | grep 'Free Space' | tail -1)
 START=$(echo $FREESPACE | awk '{print $1}')
 END=$(echo $FREESPACE | awk '{print $2}')
-parted $DISK mkpart primary $START $END
 
+PREBLKLIST=$(mktemp)
+POSTBLKLIST=$(mktemp)
+
+blkid | grep $DISK | cut -d: -f1 | sort > $PREBLKLIST
+parted $DISK mkpart primary $START $END
 PARTNUM=$(parted $DISK print | sort -n | tail -1 | awk '{print $1}')
 parted $DISK set $PARTNUM lvm on
+blkid | grep $DISK | cut -d: -f1 | sort > $POSTBLKLIST
 
-PARTNAME=$(blkid | grep $DISK | cut -d: -f1 | sort | tail -1)
+PARTNAME=$(comm -13 $PREBLKLIST $POSTBLKLIST)
+if [[ -z "$PARTNAME" ]]
+then
+    PARTNAME=$DISK$PARTNUM
+fi
+
 pvcreate $PARTNAME
 vgcreate docker-vg $PARTNAME
+
+rm -f $PREBLKLIST $POSTBLKLIST
 
 yum -y clean all
 systemctl reboot

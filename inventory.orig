@@ -15,8 +15,8 @@ ${IP} openshift_ip=${IP} openshift_schedulable=true openshift_node_group_name="n
 [OSEv3:vars]
 openshift_cluster_monitoring_operator_install=false
 
-oreg_auth_user=${RHSM_USER}
-oreg_auth_password=${RHSM_PASS}
+oreg_auth_user=${OREG_USER}
+oreg_auth_password=${OREG_PASS}
 
 ansible_ssh_user=root
 enable_excluders=False

@@ -49,8 +49,6 @@ oc adm policy add-cluster-role-to-user cluster-admin ${ADMIN_USER}
 
 htpasswd -b /etc/origin/master/htpasswd ${USERNAME} ${PASSWORD}
 
-oc create secret docker-registry rhcc --docker-server=registry.redhat.io --docker-username=${RHSM_USER} --docker-password=${RHSM_PASS}
-
 echo "******"
 echo "* Your console is https://console.$DOMAIN:$API_PORT"
 echo "*"

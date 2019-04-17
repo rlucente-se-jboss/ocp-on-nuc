@@ -54,6 +54,17 @@ match your credentials for the [Red Hat Customer
 Portal](https://access.redhat.com).  Optionally, you can asign the
 `POOL_ID` to match one of your entitlements.
 
+With OCP 3.11, the [Red Hat container registry](https://registry.redhat.io)
+now restricts pulling images to authenticated users.  To get your
+credentials, go to the [Red Hat container registry](https://registry.redhat.io)
+and click on the `Service Accounts` link in the center right of the
+page.  Scroll until you find your account or click `New Service
+Account` to create one.  Click on your service account.  Make sure
+the `Token Information` tab is selected and copy your username and
+password to the parameters `OREG_USER` and `OREG_PASS`, respectively,
+in the `install.conf` file.  Make sure the username includes the
+random number, the vertical bar, and the service account name.
+
 ## Prepare the Server
 Run the following script as root to prepare the server for installs.
 This script registers the system and creates the docker-vg volume

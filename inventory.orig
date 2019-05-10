@@ -13,7 +13,7 @@ ${IP} openshift_ip=${IP}
 ${IP} openshift_ip=${IP} openshift_schedulable=true openshift_node_group_name="node-config-all-in-one"
 
 [OSEv3:vars]
-openshift_cluster_monitoring_operator_install=false
+openshift_cluster_monitoring_operator_install=true
 
 oreg_auth_user=${OREG_USER}
 oreg_auth_password=${OREG_PASS}
@@ -54,3 +54,4 @@ openshift_node_groups=[{'name': 'node-config-all-in-one', 'labels': ['node-role.
 openshift_logging_es_cluster_size=1
 openshift_logging_es_memory_limit=4G
 
+openshift_additional_registry_credentials=[{'host':'registry.connect.redhat.com','user':'${RHSM_USER}','password':'${RHSM_PASS}','test_image':'mongodb/enterprise-operator:0.3.2'}]

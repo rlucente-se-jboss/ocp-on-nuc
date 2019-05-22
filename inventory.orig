@@ -4,16 +4,19 @@ nodes
 etcd
 
 [masters]
-${IP} openshift_ip=${IP} openshift_schedulable=true
+${IP} openshift_ip=${IP} openshift_schedulable=true openshift_public_hostname=console.${DOMAIN} openshift_public_ip=${IP}
 
 [etcd]
-${IP} openshift_ip=${IP}
+${IP} openshift_ip=${IP} openshift_public_hostname=console.${DOMAIN} openshift_public_ip=${IP}
 
 [nodes]
-${IP} openshift_ip=${IP} openshift_schedulable=true openshift_node_group_name="node-config-all-in-one"
+${IP} openshift_ip=${IP} openshift_schedulable=true openshift_node_group_name="node-config-all-in-one" openshift_public_hostname=console.${DOMAIN} openshift_public_ip=${IP}
 
 [OSEv3:vars]
-openshift_cluster_monitoring_operator_install=true
+openshift_master_cluster_hostname=console.${DOMAIN}
+openshift_master_cluster_public_hostname=console.${DOMAIN}
+
+openshift_cluster_monitoring_operator_install=false
 
 oreg_auth_user=${OREG_USER}
 oreg_auth_password=${OREG_PASS}

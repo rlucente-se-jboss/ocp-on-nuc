@@ -16,7 +16,7 @@ ${IP} openshift_ip=${IP} openshift_schedulable=true openshift_node_group_name="n
 openshift_master_cluster_hostname=console.${DOMAIN}
 openshift_master_cluster_public_hostname=console.${DOMAIN}
 
-openshift_cluster_monitoring_operator_install=false
+openshift_cluster_monitoring_operator_install=${MONITORING_OPERATOR}
 
 oreg_auth_user=${OREG_USER}
 oreg_auth_password=${OREG_PASS}

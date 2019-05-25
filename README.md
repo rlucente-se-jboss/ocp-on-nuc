@@ -108,3 +108,67 @@ Reboot the computer.  When the system is back up, run:
     ./upgrade-logging.sh
     ./upgrade-metrics.sh
 
+# Notes on running disconnected
+## Set up stable DNS name resolution
+This will work with a VirtualBox VM on OSX.  In this configuration,
+the host is providing stable DNS name resolution for the domain
+`<FIXED IP>.nip.io`.  The parameter `<FIXED IP>` is whatever static
+IP address was assigned to the OCP all-in-one instance.
+
+Make sure that dnsmasq is running and there is a stable wildcard
+resolution for `<FIXED IP>.nip.io`.  On OSX, you can use the resolver
+facility by doing creating a file named `/etc/resolver/nip.io` with
+the contents:
+
+    domain nip.io
+    nameserver 127.0.0.1
+
+Then use brew to install and run dnsmasq.  First, install it using:
+
+    brew install dnsmasq
+
+Next, create the file `/usr/local/etc/dnsmasq.conf` with the contents:
+
+    address=/.<FIXED IP>.nip.io/<FIXED IP>
+    listen-address=127.0.0.1
+
+Finally, start `dnsmasq` using:
+
+    sudo brew services start dnsmasq
+
+## Create the example project and application
+This example must first be built with internet connectivity so that all the required images are pulled and added to the local docker registry.  With internet connectivity, do the following:
+
+    oc new-app php~https://github.com/rlucente-se-jboss/phpmysqldemo.git --name myphp
+    oc expose svc/myphp
+
+Once the application is fully up and running, and possibly with an added database via the web console, you can then delete the project and application using:
+
+    oc delete all --all -n demo
+    oc delete project demo
+
+Then remove the pre-built docker image using:
+
+    ssh root@<FIXED IP>
+    docker rmi -f $(docker images | grep myphp | awk '{print $3}')
+
+Finally, on your host, get a local copy of the git repository:
+
+    git clone https://github.com/rlucente-se-jboss/phpmysqldemo.git
+
+## Recreate the image while running disconnected
+With the internal docker registry now pre-populated, you can create the image using:
+
+    cd /path/to/phpmysqldemo
+    oc login -u developer -p developer console.<FIXED IP>.nip.io:8443
+    oc new-project demo
+    oc new-build --binary --image-stream php --name myphp
+    oc start-build myphp --from-dir=.
+
+When the build completes, issue:
+    oc new-app myphp
+    oc expose svc/myphp
+
+To connect the application to the MySQL instance, use:
+    oc set env dc/myphp MYSQL_SERVICE_HOST=mysql.demo.svc.cluster.local MYSQL_SERVICE_PORT=3306 MYSQL_SERVICE_DATABASE=myphp MYSQL_SERVICE_USERNAME=myphp MYSQL_SERVICE_PASSWORD=myphp
+

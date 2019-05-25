@@ -26,9 +26,6 @@ subscription-manager repos \
 # update the system
 yum -y update
 
-# set hostname
-hostnamectl set-hostname console.${DOMAIN}
-
 # configure a separate volume group for docker (e.g. docker-vg)
 DISK=$(parted -l | grep Disk | grep -v 'mapper\|Flags' | awk '{print $2; exit}' | cut -d: -f1)
 FREESPACE=$(parted $DISK print free | grep 'Free Space' | tail -1)

@@ -39,7 +39,7 @@ will be created later.  Make sure to set the root password and also
 create an unprivileged user (with sudo privileges).  In my
 configuration, I also disabled the onboard WiFi interface.
 
-NB: DO NOT SET THE HOSTNAME WHEN INSTALLING RHEL.  This can cause
+**NB: DO NOT SET THE HOSTNAME WHEN INSTALLING RHEL.**  This can cause
 name resolution issues for the internal docker registry that are
 still being investigated.
 
